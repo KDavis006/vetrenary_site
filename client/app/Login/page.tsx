@@ -2,12 +2,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
-import { Redirect } from 'next';
-import { useRouter } from 'next/navigation';
 
 export default function SignupPage() {
-  const router = useRouter();
-  const [loading, setLoading] = React.useState(false);
   const [user, setUser] = React.useState({
     email: '',
     password: '',
@@ -38,30 +34,10 @@ export default function SignupPage() {
   };
 
   return (
-    // <div className='flex flex-col items-center justify-center min-h-screen py-2'>
-    //   <h1>{loading ? 'Processing' : 'Login'}</h1>
-    //   <hr />
-
-    //   <label htmlFor='email'>email</label>
-    //   <input
-    //     id='email'
-    //     type='text'
-    //     value={user.email}
-    //     onChange={(e) => setUser({ ...user, email: e.target.value })}
-    //     placeholder='email'
-    //   />
-    //   <label htmlFor='password'>password</label>
-    //   <input
-    //     id='password'
-    //     type='password'
-    //     value={user.password}
-    //     onChange={(e) => setUser({ ...user, password: e.target.value })}
-    //     placeholder='password'
-    //   />
-    //   <button onClick={onLogin}>Login</button>
-    //   <Link href='/Signup'>Visit signup page</Link>
-    // </div>
     <div>
+      <Link href='/Animals' className='absolute m-3 underline'>
+        ← Back to Animals
+      </Link>
       <Image
         src='/campus.jpg'
         alt='background Image'
@@ -72,7 +48,7 @@ export default function SignupPage() {
       <div className='flex w-screen lg:w-1/2  justify-center items-center h-screen'>
         <div className='flex flex-col justify-center items-center h-2/3 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
           <div className='text-4xl font-bold text-center mb-8'>Login</div>
-          <div className='flex flex-col w-full space-y-4'>
+          <form onSubmit={onLogin} className='flex flex-col w-full space-y-4'>
             <div className='flex flex-col space-y-1'>
               <label htmlFor='email' className='text-sm font-medium'>
                 Email:
@@ -80,7 +56,11 @@ export default function SignupPage() {
               <input
                 id='email'
                 type='text'
-                className='px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:ring-1'
+                value={user.email}
+                placeholder='Email...'
+                className='px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:ring-1 text-black'
+                onChange={(e) => setUser({ ...user, email: e.target.value })}
+                required
               />
             </div>
             <div className='flex flex-col space-y-1'>
@@ -90,7 +70,12 @@ export default function SignupPage() {
               <input
                 id='password'
                 type='password'
-                className='px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:ring-1'
+                minLength={4}
+                value={user.password}
+                placeholder='Password...'
+                className='px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:ring-1 text-black'
+                onChange={(e) => setUser({ ...user, password: e.target.value })}
+                required
               />
               <Link
                 href='/'
@@ -102,14 +87,13 @@ export default function SignupPage() {
             <button className='py-2 px-4 text-white text-3xl underline'>
               Login →
             </button>
-          </div>
-          <div className='flex justify-center mt-6'>
+          </form>
+          <div className='flex justify-center mt-3'>
             <Link
               href='/Signup'
               className='text-sm text-indigo-600 hover:text-indigo-500'
             >
-              {' '}
-              Go to Signup
+              Create an Account
             </Link>
           </div>
         </div>
