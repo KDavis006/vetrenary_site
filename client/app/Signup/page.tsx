@@ -14,28 +14,31 @@ export default function SignupPage() {
     phoneNumber: '',
   });
 
+  const validatePassword = () => {
+    if (user.password !== user.confirmPassword) {
+      return false;
+    }
+    return true;
+  };
+
   const onSignup = async () => {
     try {
       console.log(user);
-      if (user.password == user.confirmPassword) {
-        const response = await fetch('http://localhost:5000/api/users', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(user),
-        });
+      const response = await fetch('http://localhost:5000/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
 
-        if (!response) {
-          throw new Error('Failed to sign up');
-        }
-
-        const data = await response.json();
-        console.log('Sign up successful:', data);
-        window.location.href = '/Login';
-      } else {
-        throw new Error('Passwords do not match');
+      if (!response) {
+        throw new Error('Failed to sign up');
       }
+
+      const data = await response.json();
+      console.log('Sign up successful:', data);
+      window.location.href = '/Login';
     } catch (err: any) {
       console.error('Error during log in:', err.message);
     } finally {
@@ -58,7 +61,18 @@ export default function SignupPage() {
       <div className='flex w-screen lg:w-1/2  justify-center items-center h-screen'>
         <div className='flex flex-col justify-center items-center h-5/6 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
           <div className='text-4xl font-bold text-center mb-5'>Sign Up</div>
-          <form onSubmit={onSignup} className='flex flex-col w-full space-y-2'>
+          <form
+            onSubmit={function (e) {
+              let bool = validatePassword();
+              if (!bool) {
+                e.preventDefault();
+                alert('Passwords do not match');
+              } else {
+                return true;
+              }
+            }}
+            className='flex flex-col w-full space-y-2'
+          >
             <div className='flex flex-row justify-between'>
               <div className='flex flex-col space-y-1 w-2/5'>
                 <label htmlFor='firstname' className='text-xs font-medium'>
