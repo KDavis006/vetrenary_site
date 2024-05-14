@@ -41,9 +41,9 @@ export default function Home() {
             Our Fabulous Program!
           </div>
 
-          <div className='flex flex-row justify-evenly'>
-            <div className='h-4/5 w-1/4'>
-              <div className='bg-wm-orange p-5 rounded-t-lg'>
+          <div className='flex flex-col sm:flex-row justify-evenly items-center'>
+            <div className='h-4/5 sm:w-1/4 w-4/5 my-3 sm:my-0'>
+              <div className='bg-wm-orange p-5 rounded-lg'>
                 <Image
                   src='/campus.jpg'
                   alt='background Image'
@@ -61,11 +61,10 @@ export default function Home() {
                   ad quos. Velit.
                 </div>
               </div>
-              <div className='w-0 h-0 border-l-[158px] border-l-transparent border-t-[75px] border-t-wm-orange border-r-[158px] border-r-transparent'></div>
             </div>
 
-            <div className='h-4/5 w-1/4'>
-              <div className='bg-wm-orange p-5 rounded-t-lg'>
+            <div className='h-4/5 sm:w-1/4 w-4/5 my-3 sm:my-0'>
+              <div className='bg-wm-orange p-5 rounded-lg'>
                 <Image
                   src='/campus.jpg'
                   alt='background Image'
@@ -83,10 +82,9 @@ export default function Home() {
                   ad quos. Velit.
                 </div>
               </div>
-              <div className='w-0 h-0 border-l-[158px] border-l-transparent border-t-[75px] border-t-wm-orange border-r-[158px] border-r-transparent'></div>
             </div>
-            <div className='h-4/5 w-1/4'>
-              <div className='bg-wm-orange p-5 rounded-t-lg'>
+            <div className='h-4/5 sm:w-1/4 w-4/5 my-3 sm:my-0'>
+              <div className='bg-wm-orange p-5 rounded-lg'>
                 <Image
                   src='/campus.jpg'
                   alt='background Image'
@@ -104,7 +102,6 @@ export default function Home() {
                   ad quos. Velit.
                 </div>
               </div>
-              <div className='w-0 h-0 border-l-[158px] border-l-transparent border-t-[75px] border-t-wm-orange border-r-[158px] border-r-transparent'></div>
             </div>
           </div>
           <div className='text-center py-5'>
@@ -128,19 +125,19 @@ export default function Home() {
               alt='background Image'
               width={1000}
               height={1000}
-              className='w-1/2'
+              className='w-3/5'
             />
             <div className='flex flex-col justify-evenly w-1/2 bg-wm-orange'>
-              <div className='text-center text-white text-4xl'>
+              <div className='text-center py-2 text-white text-lg sm:text-xl md:text-2xl lg:text-4xl'>
                 Meet Our Class
               </div>
-              <div className='text-center text-wrap text-md mx-28'>
+              <div className='text-center text-wrap text-[8px] sm:text-[12px] md:text-xm lg:text-sm mx-8 sm:mx-12 md:text-16 lg:mx-28 py-2'>
                 Tenetur rem modi vitae distinctio cum velit exercitationem aut,
                 quos itaque impedit nisi! Facere voluptates tenetur, alias
                 laborum expedita reiciendis aut, obcaecati quis maxime ad quos.
                 Velit.
               </div>
-              <div className='text-center text-wrap text-2xl underline'>
+              <div className='text-center text-wrap text-base sm:text-lg md:text-xl lg:text-2xl underline'>
                 <Link href='/Students'>Our Students →</Link>
               </div>
             </div>

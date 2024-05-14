@@ -47,7 +47,7 @@ const Navbar = () => {
               />
             </Link>
             <div className={isOpen ? 'flex' : ' hidden md:flex'}>
-              <ul className='flex absolute md:relative flex-col md:flex-row w-full shadow md:shadow-none text-center top-12 left-0 md:top-0 md:flex bg-transparent text-white'>
+              <ul className='flex absolute bg-wm-orange md:relative flex-col md:flex-row w-4/5 shadow md:shadow-none text-center top-12 left-0 md:top-0 md:flex bg-transparent text-white'>
                 {listItems}
               </ul>
             </div>
