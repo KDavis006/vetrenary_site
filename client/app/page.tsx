@@ -2,8 +2,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from './Components/Nav/Navbar';
 import Footer from './Components/Footer/Footer';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import 'preline/preline';
+import { IStaticMethods } from 'preline/preline';
+declare global {
+  interface Window {
+    HSStaticMethods: IStaticMethods;
+  }
+}
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.HSStaticMethods.autoInit();
+  }, [location.pathname]);
+
   return (
     <div>
       {/* Navbar */}
