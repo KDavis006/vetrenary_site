@@ -2,24 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from './Components/Nav/Navbar';
 import Footer from './Components/Footer/Footer';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-
-import 'preline/preline';
-import { IStaticMethods } from 'preline/preline';
-declare global {
-  interface Window {
-    HSStaticMethods: IStaticMethods;
-  }
-}
 
 export default function Home() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.HSStaticMethods.autoInit();
-  }, [location.pathname]);
-
   return (
     <div>
       {/* Navbar */}
@@ -35,8 +19,8 @@ export default function Home() {
       />
 
       {/* Opening to the page (Header) */}
-      <div className='flex w-screen lg:w-1/2 justify-center items-center h-[80vh]'>
-        <div className='flex flex-col justify-evenly items-center h-3/4 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
+      <div className='flex w-screen h-screen lg:w-1/2 justify-center items-center'>
+        <div className='flex flex-col justify-evenly items-center h-1/2 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
           <div className='text-4xl font-bold text-center mb-5'>Welcome</div>
           <div className='text-center text-wrap'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
@@ -50,10 +34,10 @@ export default function Home() {
       </div>
 
       {/* Main Body */}
-      <div className='bg-white mt-[4.375rem] pb-[4.375rem]'>
+      <div className='bg-white pb-[4.375rem]'>
         {/* About the program */}
         <div>
-          <div className='text-center text-[#0c2340] text-6xl py-10'>
+          <div className='text-center text-[#5b6c81] text-6xl py-10'>
             Our Fabulous Program!
           </div>
 
@@ -173,7 +157,6 @@ export default function Home() {
               <Link href='/Events'>Our Events →</Link>
             </div>
           </div>
-          <div className='w-0 h-0 my-5 border-t-[8.25rem] border-t-transparent border-l-[125px] border-l-wm-orange border-b-[8.25rem] border-b-transparent'></div>
           <Image
             src='/campus.jpg'
             alt='background Image'
@@ -192,7 +175,6 @@ export default function Home() {
             height={1}
             className='h-auto w-[25%] rounded-full mx-5'
           />
-          <div className='w-0 h-0 my-5 border-t-[8.25rem] border-t-transparent border-r-[125px] border-r-wm-orange border-b-[8.25rem] border-b-transparent'></div>
 
           <div className='flex flex-col justify-evenly bg-wm-orange w-3/5 my-5'>
             <div className='text-center text-4xl py-5'>Adopt Today!</div>
@@ -222,7 +204,6 @@ export default function Home() {
               <Link href='/Events'>Be A Hero →</Link>
             </div>
           </div>
-          <div className='w-0 h-0 my-5 border-t-[8.25rem] border-t-transparent border-l-[125px] border-l-wm-orange border-b-[8.25rem] border-b-transparent'></div>
           <Image
             src='/campus.jpg'
             alt='background Image'

@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <div>
-      <div className='w-full h-[50vh] bg-wm-orange flex flex-row justify-evenly items-center'>
+      <div className='w-full h-[35vh] bg-wm-orange flex flex-row justify-evenly items-center'>
         <Image src='/vercel.svg' alt='Your Logo' height={100} width={200} />
         <div className='bg-white h-3/4 w-1'></div>
         <div className='flex flex-col justify-evenly h-4/5'>
