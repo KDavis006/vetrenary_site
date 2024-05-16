@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useEffect } from 'react';
+import { redirect } from 'next/navigation';
 
 export default function SignupPage() {
   const [user, setUser] = React.useState({
@@ -23,24 +24,27 @@ export default function SignupPage() {
 
   const onSignup = async () => {
     try {
-      console.log(user);
-      const response = await fetch('http://localhost:5000/api/users', {
+      alert(user);
+      const response = await fetch('http://localhost:5000/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
       });
+      alert(response);
 
       if (!response) {
+        alert(`${await response.json()}`);
         throw new Error('Failed to sign up');
       }
 
       const data = await response.json();
-      console.log('Sign up successful:', data);
-      window.location.href = '/Login';
+      alert(`Sign up successful: + ${data}`);
+      redirect('/login');
     } catch (err: any) {
       console.error('Error during log in:', err.message);
+      alert(err.message);
     } finally {
       console.log('Did this run');
     }
@@ -62,15 +66,15 @@ export default function SignupPage() {
         <div className='flex flex-col justify-center items-center h-5/6 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
           <div className='text-4xl font-bold text-center mb-5'>Sign Up</div>
           <form
-            onSubmit={function (e) {
-              let bool = validatePassword();
-              if (!bool) {
-                e.preventDefault();
-                alert('Passwords do not match');
-              } else {
-                return true;
-              }
-            }}
+            // onSubmit={function (e) {
+            //   let bool = validatePassword();
+            //   if (!bool) {
+            //     e.preventDefault();
+            //     alert('Passwords do not match');
+            //   } else {
+            //     onSignup();
+            //   }
+            // }}
             className='flex flex-col w-full space-y-2'
           >
             <div className='flex flex-row justify-between'>
@@ -174,7 +178,10 @@ export default function SignupPage() {
                 Forgot Password
               </Link>
             </div>
-            <button className='px-3 text-white text-2xl underline'>
+            <button
+              onClick={() => onSignup()}
+              className='px-3 text-white text-2xl underline'
+            >
               Sign Up →
             </button>
           </form>

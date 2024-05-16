@@ -1,4 +1,4 @@
-import cloudinary from 'cloudinary';
+const cloudinary = require('cloudinary');
 
 cloudinary.config({
   cloud_name: 'vetrenarysite',
@@ -6,4 +6,4 @@ cloudinary.config({
   api_secret: process.env.SECRET_CLOUDINARY_KEY
 });
 
-export default cloudinary;
+module.exports = cloudinary;

@@ -1,6 +1,4 @@
-// userSchema.js
-
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const userSchema = new Schema(
@@ -71,4 +69,4 @@ userSchema.method("validPassword", function (password) {
 
 const User = mongoose.model('User', userSchema);
 
-export default User;
+module.exports =  User;

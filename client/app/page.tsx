@@ -19,10 +19,10 @@ export default function Home() {
       />
 
       {/* Opening to the page (Header) */}
-      <div className='flex w-screen h-screen lg:w-1/2 justify-center items-center'>
-        <div className='flex flex-col justify-evenly items-center h-1/2 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
-          <div className='text-4xl font-bold text-center mb-5'>Welcome</div>
-          <div className='text-center text-wrap'>
+      <div className='flex w-screen h-[90vh] lg:w-1/2 justify-center items-center'>
+        <div className='flex flex-col justify-evenly items-center h-2/3 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
+          <div className='text-4xl text-center mb-3'>Welcome</div>
+          <div className='text-center text-wrap text-sm'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
             distinctio facilis reprehenderit doloremque eveniet tempora sint
             quibusdam, doloribus esse id hic voluptate voluptates? Tenetur rem

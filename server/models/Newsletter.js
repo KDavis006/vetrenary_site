@@ -1,6 +1,4 @@
-// newsletterSchema.js
-
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const newsletterSchema = new Schema(

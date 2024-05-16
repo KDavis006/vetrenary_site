@@ -1,5 +1,5 @@
-import cloudinary from '../cloudinaryConfig';
-import Animal from '../models/Animals';
+const cloudinary = require('../cloudinaryConfig')
+const Animal = require('../models/Animals');
 
 const addAnimal = async (req, res) => {
   try {

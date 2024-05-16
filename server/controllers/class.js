@@ -1,5 +1,5 @@
-import cloudinary from '../cloudinaryConfig';
-import Class from '../models/Class';
+const cloudinary = require('../cloudinaryConfig')
+const Class = require('../models/Class');
 
 const addClass = async (req, res) => {
   try {

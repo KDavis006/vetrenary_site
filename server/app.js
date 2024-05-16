@@ -1,29 +1,44 @@
-// app.js
-
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const routes = require('./routes');
+const router = express.Router();
 const connectDB = require("./db/connect");
+const userRoute = require('./routes/people-controller')
+const animalRoute = require('./routes/animal-controller')
 
 // Middleware
 app.use(bodyParser.json());
+require('dotenv').config({path: './server/.env'})
 
-// Routes
-app.use('/api', routes);
+// For User
+
+app.use('/users', userRoute);
+app.use('/animals', animalRoute)
+
+// // For Newsletter
+// const { addEvent, editEvent, removeEvent, getAllNews } = require('./routes/controllers/newsletterController');
+// router.get('/newsletter', getAllNews);
+// router.post('/newsletter', addEvent);
+// router.put('/newsletter/:id', editEvent);
+// router.delete('/newsletter/:id', removeEvent);
+
+// // For Class
+// const { addClass, editClass, removeClass, getClass } = require('./routes/class-controller');
+// router.get('/class', getClass);
+// router.post('/class', addClass);
+// router.put('/class/:id', editClass);
+// router.delete('/class/:id', removeClass);
 
 // Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ success: false, error: 'Server Error' });
-});
+// app.use((err, req, res, next) => {
+//   console.error(err.stack);
+//   res.status(500).json({ success: false, error: 'Server Error' });
+// });
 
-// Not found middleware
-app.use((req, res) => {
-  res.status(404).json({ success: false, error: 'Not Found' });
-});
-
-const PORT = process.env.PORT || 5000;
+// // Not found middleware
+// app.use((req, res) => {
+//   res.status(404).json({ success: false, error: 'Not Found' });
+// });
 
 const initServer = async () => {
     try {

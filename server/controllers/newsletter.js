@@ -1,4 +1,4 @@
-import cloudinary from '../cloudinaryConfig';
+const cloudinary = require('../cloudinaryConfig')
 import Newsletter from '../models/Newsletter';
 
 const addEvent = async (req, res) => {

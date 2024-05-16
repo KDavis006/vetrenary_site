@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const animalSchema = new Schema(
@@ -39,4 +39,4 @@ const animalSchema = new Schema(
   { collection: "Animals" }
 );
 
-export default animalSchema;
+module.export =  animalSchema;

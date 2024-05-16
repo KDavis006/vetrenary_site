@@ -21,12 +21,12 @@ const Animals = () => {
       />
 
       {/* Opening to the page (Header) */}
-      <div className='flex w-screen lg:w-1/2 justify-center items-center h-screen'>
-        <div className='flex flex-col justify-evenly items-center h-1/3 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
-          <div className='text-6xl text-center mb-5'>
+      <div className='flex w-screen lg:w-1/2 justify-center items-center h-[90vh]'>
+        <div className='flex flex-col justify-evenly items-center h-2/3 w-4/5 md:w-3/4 lg:w-2/3 py-12 px-4 bg-wm-orange rounded-[15px]'>
+          <div className='text-4xl text-center mb-5'>
             To Adopt Please Make an Account
           </div>
-          <div className='text-center text-wrap text-lg sm:text-xl md:text-2xl lg:text-3xl underline'>
+          <div className='text-center text-wrap text-base sm:text-lg md:text-xl lg:text-2xl underline'>
             <Link href='/Signup'>Create an Account →</Link>
           </div>
         </div>
@@ -36,7 +36,7 @@ const Animals = () => {
         <form className='max-w-sm mx-auto'>
           <select
             id='countries'
-            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           >
             <option selected>- Animals -</option>
             <option value='DG'>Dog</option>
@@ -49,7 +49,7 @@ const Animals = () => {
         <form className='max-w-sm mx-auto'>
           <select
             id='countries'
-            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           >
             <option selected>- Age -</option>
             <option value='Y'>{'<'} 1 year</option>
@@ -60,7 +60,7 @@ const Animals = () => {
         <form className='max-w-sm mx-auto'>
           <select
             id='countries'
-            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           >
             <option selected>- Gender -</option>
             <option value='M'>Male</option>
@@ -71,7 +71,7 @@ const Animals = () => {
         <form className='max-w-sm mx-auto'>
           <select
             id='countries'
-            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+            className='bg-wm-orange rounded-full p-4 text-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
           >
             <option selected>- Size -</option>
             <option value='SM'>Small</option>
